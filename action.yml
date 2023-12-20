@@ -14,7 +14,7 @@ runs:
         python -m pip install git+https://github.com/Beakerboy/VBA-Linter.git@dev
       shell: bash
     - env:
-        FULLPATH: "${{ github.workspace }}/${{ inputs.path }}"
+        FULLPATH: "${{ github.workspace }}/${{ inputs.path }}/src"
       run: |
         python -m vba_linter $FULLPATH
       shell: bash
