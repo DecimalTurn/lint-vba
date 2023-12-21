@@ -11,6 +11,7 @@ runs:
   using: "composite"
   steps:
     - run: |
+        python pip3 install --upgrade pip 
         python -m pip install https://github.com/Beakerboy/VBA-Linter/archive/dev.zip
       shell: bash
     - env:
