@@ -15,8 +15,8 @@ runs:
       shell: bash
     - env:
         FULLPATH: "${{ github.workspace }}/${{ inputs.path }}"
-        PYTHONPATH: ${{ env.PYTHONPATH }}
       run: |
-        echo "Python Path: $PYTHONPATH"
+        echo "Python Path:"
+        python -c "import sys; print('\n'.join(sys.path))"
         python -m vba_linter $FULLPATH
       shell: bash
