@@ -15,7 +15,8 @@ runs:
       shell: bash
     - env:
         FULLPATH: "${{ github.workspace }}/${{ inputs.path }}"
-        FILEPATH: "${{ github.workspace }}/src/vba_linter"
+        PYTHONPATH: ${{ env.PYTHONPATH }}
       run: |
-        python -m $FILEPATH $FULLPATH
+        echo "Python Path: $PYTHONPATH"
+        python -m vba_linter $FULLPATH
       shell: bash
