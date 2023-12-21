@@ -10,15 +10,12 @@ inputs:
 runs:
   using: "composite"
   steps:
+    - uses: actions/setup-python@v1
     - run: |
-        python -m pip install git+https://github.com/Beakerboy/VBA-Linter.git@dev
+        python -m pip install https://github.com/user/repository/archive/branch.zip
       shell: bash
     - env:
         FULLPATH: "${{ github.workspace }}/${{ inputs.path }}"
       run: |
-        echo "Python Path:"
-        python -c "import sys; print('\n'.join(sys.path))"
-        ls /usr/bin/python/
-        ll /usr/bin/python/
         python -m vba_linter $FULLPATH
       shell: bash
