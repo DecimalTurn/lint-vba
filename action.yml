@@ -10,7 +10,6 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - uses: actions/setup-python@v1
     - run: |
         python -m pip install https://github.com/user/repository/archive/branch.zip
       shell: bash
