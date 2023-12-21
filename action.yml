@@ -18,5 +18,6 @@ runs:
       run: |
         echo "Python Path:"
         python -c "import sys; print('\n'.join(sys.path))"
+        ls /usr/bin/python
         python -m vba_linter $FULLPATH
       shell: bash
